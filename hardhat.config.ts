@@ -1,6 +1,8 @@
 import * as dotenv from "dotenv";
+import "@nomiclabs/hardhat-ethers";
 import "@nomicfoundation/hardhat-toolbox";
 import { HardhatUserConfig, task, types } from "hardhat/config";
+import "hardhat-deploy";
 
 dotenv.config();
 
@@ -87,14 +89,14 @@ const config: HardhatUserConfig = {
             polygon: getSecret("POLYSCAN_API_KEY"),
         },
     },
-    // namedAccounts: {
-    //     deployer: {
-    //         default: 0,
-    //     },
-    //     user: {
-    //         default: 1,
-    //     },
-    // },
+    namedAccounts: {
+        deployer: {
+            default: 0,
+        },
+        user: {
+            default: 1,
+        },
+    },
 };
 
 export default config;
