@@ -13,3 +13,4 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     });
 };
 export default func;
+module.exports.tags = ["NFTFactory"];
