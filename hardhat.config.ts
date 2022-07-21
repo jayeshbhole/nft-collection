@@ -1,8 +1,6 @@
 import * as dotenv from "dotenv";
-import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import "hardhat-deploy";
-import "@nomiclabs/hardhat-solhint";
+import { HardhatUserConfig, task, types } from "hardhat/config";
 
 dotenv.config();
 
@@ -45,7 +43,7 @@ const config: HardhatUserConfig = {
                     balance: "10000000000000000000000000000000000000000000000000",
                 },
                 {
-                    privateKey: getSecret("PRIVATE_KEY"),
+                    privateKey: getSecret("PRIVATE_KEY2"),
                     balance: "1000000000000000000000",
                 },
             ],
