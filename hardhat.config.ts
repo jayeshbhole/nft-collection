@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
-import "@nomiclabs/hardhat-ethers";
 import "@nomicfoundation/hardhat-toolbox";
 import { HardhatUserConfig, task, types } from "hardhat/config";
+import "@nomiclabs/hardhat-ethers";
 import "hardhat-deploy";
 
 dotenv.config();
