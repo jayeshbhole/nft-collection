@@ -7,7 +7,7 @@ const setupTest = deployments.createFixture(
         await deployments.fixture(); // ensure you start from a fresh deployments
         const { deployer } = await getNamedAccounts();
         const TokenContract = await ethers.getContract("NFTFactory", deployer);
-        // await TokenContract.mint(10).then((tx: any) => tx.wait()); //this mint is executed once and then `createFixture` will ensure it is snapshotted
+
         return {
             deployer,
             TokenContract,
