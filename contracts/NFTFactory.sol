@@ -13,7 +13,7 @@ contract NFTFactory is ERC721URIStorage, Ownable {
     /// @dev Base token URI used as a prefix by tokenURI().
     string public baseTokenURI;
 
-    constructor() ERC721("NFTFactory", "NFTF") {
+    constructor() ERC721("YAY NFTs", "YAY") {
         baseTokenURI = "";
     }
 
@@ -28,7 +28,9 @@ contract NFTFactory is ERC721URIStorage, Ownable {
         return newItemId;
     }
 
-    function mintTo(address recipient) public returns (uint256) {
+    function mintTo(address recipient) public onlyOwner returns (uint256) {
+        require(_tokenIds.current() < 3000, "ERC721: total supply reached");
+
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
         _safeMint(recipient, newItemId);
