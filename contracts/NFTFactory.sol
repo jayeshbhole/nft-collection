@@ -28,6 +28,10 @@ contract NFTFactory is ERC721URIStorage, Ownable {
         return newItemId;
     }
 
+    function changeNFTURI(uint _id, string memory tokenURI) public onlyOwner {
+        _setTokenURI(_id, tokenURI);
+    }
+
     function mintTo(address recipient) public onlyOwner returns (uint256) {
         require(_tokenIds.current() < 3000, "ERC721: total supply reached");
 
